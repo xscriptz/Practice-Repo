@@ -8,9 +8,13 @@ class Fraction
 	public:
 		Fraction(int first, int second)
 		{
+			float third = second / first;
 
 		}
-		Fraction();
+		Fraction operator+(Fraction obj)
+		{
+			
+		}
 
 
 }

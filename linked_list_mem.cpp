@@ -10,28 +10,41 @@ struct Node* next;
 
 int main()
 {
-Node *head,*mid,*tail;
-string gem = "abcdda";
-int p=0;
-cin >> p;
-for(int i =0;i<gem.length();i++)
+Node *head,*mid,*tail,*sec;
+string d;
+string s = "abcsa";
+
+for(int i =0;i<s.length();i++)
 {
 head = (Node*)malloc(sizeof(Node));
-head->data = gem[i];
+head->data = s[i];
+    
 if(tail==NULL)
 {
 tail = head;
 mid = head;
 }
+    
 tail->next=head;
 tail = tail->next;
 }
+
+
 while(mid!=NULL)
 {
-if(mid->data=='a')
-{
-cout << char(mid->data) <<'\n';
+     sec = mid;
+     sec = sec->next;
+     while(sec!=NULL)
+         {
+          if(sec->data == mid->data)
+              {
+              d = char(sec->data);
+              break;
+          }
+         sec=sec->next;
+        } 
+                mid = mid->next;
 }
-mid = mid->next;
-}
+cout << "First repeated character: " << d <<'\n';
+
 }
